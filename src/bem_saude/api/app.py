@@ -50,8 +50,8 @@ def criar_aplicacao() -> FastAPI:
     def health_check():
         return {
             "status": "ok",
-            "ambiente": Configuracoes.AMBIENTE,
-            "swagger_habilitado": Configuracoes.swagger_habilitado
+            "ambiente": configuracoes.AMBIENTE,
+            "swagger_habilitado": configuracoes.swagger_habilitado
         }
     logger.info("Aplicação configurada com sucesso")
     return app

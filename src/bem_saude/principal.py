@@ -9,6 +9,6 @@ Ou para produção:
     uvicorn bem_saude.principal:app --host 0.0.0.0 --port 8000
 """
 
-from bem_saude.api import app
+from bem_saude.api.app import app
 
 __all__ = ["app"]
