@@ -25,6 +25,10 @@ class Configuracoes(BaseSettings):
     # Nível de loggine (DEBUG, INFO, WARNING, ERRRO, CRITICAL)
     LOG_LEVEL: str = "INFO"
 
+    # Auth0
+    AUTH0_DOMAIN: str = ""
+    AUTH0_AUDIENCE: str = ""
+
     model_config = SettingsConfigDict(
         # Buscar o .env na raiz do projeto
         env_file=str(Path(__file__).parent.parent.parent.parent / ".env"),

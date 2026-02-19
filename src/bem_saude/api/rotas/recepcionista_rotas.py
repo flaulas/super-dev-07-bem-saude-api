@@ -8,13 +8,15 @@ from bem_saude.api.schemas.recepcionista_schemas import RecepcionistaAlterarRequ
 from bem_saude.infraestrutura.banco_dados.conexao import obter_sessao
 from bem_saude.infraestrutura.banco_dados.modelos.modelo_recepcionista import ModeloRecepcionista
 from bem_saude.infraestrutura.repositorios.repositorio_recepcionista import RepositorioRecepcionista
+from bem_saude.api.auth import validar_token
 
 # Router para endpoints de recepcionistas
 # Todas as rotas começam com /recepcionistas
 
 router = APIRouter(
     prefix="/recepcionistas",
-    tags=["Recepcionista"]
+    tags=["Recepcionista"],
+    dependencies=[Depends(validar_token)]
 )
 @router.post(
     "", 

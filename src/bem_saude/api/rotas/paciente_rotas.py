@@ -10,13 +10,15 @@ from bem_saude.dominio.enums.status_cadastro import StatusCadastro
 from bem_saude.infraestrutura.banco_dados.conexao import obter_sessao
 from bem_saude.infraestrutura.banco_dados.modelos.modelo_paciente import ModeloPaciente
 from bem_saude.infraestrutura.repositorios.repositorio_paciente import RepositorioPaciente
+from bem_saude.api.auth import validar_token
 
 # Router para endpoints de pacientes
 # Todas as rotas começam com /pacientes
 
 router = APIRouter(
     prefix="/pacientes",
-    tags=["Paciente"]
+    tags=["Paciente"],
+    dependencies=[Depends(validar_token)]
 )
 
 

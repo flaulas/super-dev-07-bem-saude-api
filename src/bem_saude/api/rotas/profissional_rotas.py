@@ -9,13 +9,15 @@ from bem_saude.dominio.enums.status_cadastro import StatusCadastro
 from bem_saude.infraestrutura.banco_dados.conexao import obter_sessao
 from bem_saude.infraestrutura.banco_dados.modelos.modelo_profissional import ModeloProfissional
 from bem_saude.infraestrutura.repositorios.repositorio_profissional import RepositorioProfissional
+from bem_saude.api.auth import validar_token
 
 # Router para endpoints de profissionais
 # Todas as rotas começam com /profissionais
 
 router = APIRouter(
     prefix="/profissionais",
-    tags=["Profissional"]
+    tags=["Profissional"],
+    dependencies=[Depends(validar_token)]
 )
 
 
