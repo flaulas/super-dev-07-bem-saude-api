@@ -52,7 +52,7 @@ def criar_aplicacao() -> FastAPI:
         CORSMiddleware,
         allow_origins=[
             "http://localhost:4200",
-            "https://bemsaude-ng-ocsyb8-545f1e-187-77-55-26.traefik.me"
+            "http://hisenberg.tech"
         ],
         allow_credentials=False,
         allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
